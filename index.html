@@ -7,192 +7,165 @@
 <meta name="description" content="Technical Product Manager. More than twenty years in hands-on engineering and more than ten years in product leadership.">
 <style>
   :root{
-    --ink:#1a1d21; --muted:#5b6470; --line:#e5e7eb;
-    --accent:#2b5c8a; --bg:#fbfbfa; --card:#ffffff;
-    --maxw:720px;
+    --bg:#0f1b2d; --panel:#12233a; --ink:#e2e8f0; --muted:#8b9bb0; --faint:#5b6b80;
+    --accent:#5eead4; --line:#1e3350;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font:400 17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:var(--maxw); margin:0 auto; padding:72px 24px 96px}
+  body{margin:0; background:var(--bg); color:var(--ink);
+    font:400 16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none}
+  .serif{font-family:Georgia,"Times New Roman",serif}
+  .shell{max-width:1220px; margin:0 auto; display:flex; gap:24px; padding:0 40px}
 
-  header{display:flex; align-items:center; gap:20px; margin-bottom:52px}
-  .avatar{
-    flex:0 0 auto; width:76px; height:76px; border-radius:50%;
-    background:var(--accent); color:#fff; display:flex; align-items:center; justify-content:center;
-    font-size:28px; font-weight:600; letter-spacing:.02em; overflow:hidden;
+  .side{
+    flex:0 0 392px; position:sticky; top:0; align-self:flex-start;
+    height:100vh; overflow-y:auto; scrollbar-width:none;
+    padding:52px 40px 44px 0;
   }
-  .avatar img{width:100%; height:100%; object-fit:cover; display:block}
-  .headtext h1{font-size:28px; line-height:1.15; margin:0 0 6px; letter-spacing:-.01em}
-  .headtext .tagline{font-size:17px; color:var(--muted); margin:0; font-weight:400}
+  .side::-webkit-scrollbar{display:none}
+  .side .photo{width:96px; height:96px; border-radius:12px; object-fit:cover; margin-bottom:18px;
+    border:1px solid var(--line);}
+  .side h1{font-size:30px; line-height:1.1; margin:0 0 6px; letter-spacing:-.02em; font-weight:600}
+  .side .role{font-size:16px; color:var(--ink); margin:0 0 12px; font-weight:500}
+  .side .contact{font-size:13.5px; color:var(--muted); margin:0 0 4px}
+  .side .contact a{color:var(--accent)}
 
-  section{margin-top:48px}
-  h2{
-    font-size:13px; text-transform:uppercase; letter-spacing:.09em;
-    color:var(--accent); margin:0 0 22px; font-weight:600;
-  }
-  .about p{font-size:18px; margin:0}
+  .railbox{background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:18px 20px; margin-top:18px}
+  .rlabel{font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--faint);
+    font-weight:600; margin:0 0 12px}
 
-  .timeline{border-left:2px solid var(--line); margin-left:4px}
-  .tl-row{position:relative; padding:0 0 22px 22px}
+  .tl{border-left:1px solid var(--line); margin-left:3px}
+  .tl-row{position:relative; padding:0 0 11px 15px}
   .tl-row:last-child{padding-bottom:0}
-  .tl-row::before{
-    content:""; position:absolute; left:-7px; top:6px; width:10px; height:10px;
-    border-radius:50%; background:var(--accent);
-  }
-  .tl-role{font-weight:600; margin:0}
-  .tl-meta{color:var(--muted); font-size:15px; margin:2px 0 0; font-variant-numeric:tabular-nums}
+  .tl-row::before{content:""; position:absolute; left:-4px; top:6px; width:7px; height:7px;
+    border-radius:50%; background:var(--accent)}
+  .tl-role{font-weight:500; font-size:13.5px; margin:0; line-height:1.35; color:var(--ink)}
+  .tl-meta{color:var(--faint); font-size:12px; margin:1px 0 0}
 
-  .case{
-    background:var(--card); border:1px solid var(--line); border-radius:10px;
-    padding:26px 28px; margin-bottom:20px;
-  }
-  .case h3{font-size:19px; margin:0 0 4px; line-height:1.3}
-  .case .when{font-size:14px; color:var(--muted); margin:0 0 16px; font-variant-numeric:tabular-nums}
-  .case p{margin:0 0 14px}
-  .case p:last-child{margin-bottom:0}
-  .case .result{color:var(--ink); font-weight:500}
+  .chips{display:flex; flex-wrap:wrap; gap:6px}
+  .chip{border:1px solid var(--line); color:var(--muted); border-radius:7px; padding:3px 9px; font-size:12px}
+  .side .langs{font-size:12.5px; color:var(--faint); margin:16px 0 0}
 
-  .skillgroup{margin-bottom:20px}
-  .skillgroup:last-child{margin-bottom:0}
-  .skillgroup .label{font-weight:600; margin:0 0 10px}
-  .tags{display:flex; flex-wrap:wrap; gap:8px}
-  .tag{
-    background:var(--card); border:1px solid var(--line); border-radius:999px;
-    padding:5px 13px; font-size:14px; color:var(--ink);
-  }
-  .langs{margin:0; color:var(--ink)}
-  .langs .lvl{color:var(--muted)}
+  main{flex:1; padding:76px 0 64px; min-width:0}
+  h2{font-size:13px; text-transform:uppercase; letter-spacing:.12em; color:var(--accent);
+    font-weight:600; margin:0 0 22px}
 
-  .contact a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent; transition:border-color .15s}
-  .contact a:hover{border-bottom-color:var(--accent)}
-  .contact .sep{color:var(--line); margin:0 10px}
-  footer{margin-top:64px; padding-top:24px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
+  .hero .big{font-size:46px; line-height:1.1; margin:0 0 26px; font-weight:400; letter-spacing:-.018em; color:var(--ink)}
+  .hero .big em{font-style:italic; color:var(--accent)}
+  .hero .standfirst{font-size:17.5px; color:var(--muted); margin:0; max-width:640px}
+  .hero .standfirst strong{color:var(--ink); font-weight:500}
 
-  @media (max-width:520px){
-    .wrap{padding:48px 20px 72px}
-    header{gap:16px}
-    .avatar{width:64px; height:64px; font-size:24px}
-    .headtext h1{font-size:23px}
-    .headtext .tagline{font-size:16px}
+  .statband{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:44px 0 72px}
+  .stat-tile{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px 22px; transition:border-color .2s}
+  .stat-tile:hover{border-color:var(--accent)}
+  .stat-tile .n{font-size:34px; line-height:1; color:var(--accent); margin:0 0 8px; letter-spacing:-.02em; font-weight:600}
+  .stat-tile p{font-size:13px; color:var(--muted); margin:0}
+
+  .lede p{font-size:17px; color:var(--muted); margin:0 0 8px; max-width:620px}
+
+  .study{padding:52px 0; border-top:1px solid var(--line); margin-top:44px}
+  .study:first-of-type{margin-top:48px}
+  .study .kick{font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:var(--faint); margin:0 0 12px}
+  .study .kick .num{color:var(--accent); margin-right:10px}
+  .study h3{font-size:27px; line-height:1.22; margin:0 0 18px; font-weight:400; letter-spacing:-.01em; color:var(--ink)}
+  .study p{font-size:16px; color:var(--muted); margin:0 0 14px; max-width:640px}
+  .study .close{color:var(--ink); font-weight:500}
+  .study .close .n{color:var(--accent)}
+
+  footer{margin-top:72px; padding-top:22px; border-top:1px solid var(--line); font-size:13px; color:var(--faint)}
+
+  @media (max-width:920px){
+    .shell{flex-direction:column; padding:0 24px}
+    .side{position:static; height:auto; flex:none; overflow:visible; padding:52px 0 0}
+    main{padding:36px 0 56px}
+    .hero .big{font-size:34px}
+    .statband{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="shell">
 
-  <header>
-    <div class="avatar"><img src="photo.jpg" alt="Fernando Barrocal" width="256" height="256"></div>
-    <div class="headtext">
-      <h1>Fernando Barrocal</h1>
-      <p class="tagline">Technical Product Manager with more than twenty years in hands-on engineering and more than ten years in product leadership.</p>
-    </div>
-  </header>
-
-  <section class="about">
-    <h2>About</h2>
-    <p>I've spent more than twenty years writing software and more than ten years turning that depth into product leadership. Working both sides is where I'm most useful. I take ambiguous, cross-team platform problems, work out the engineering constraints and the business stakes together, and build through them. I'm always looking for the next challenge, ideally a 0-to-1 build or a turnaround with room to grow scope rather than steady-state maintenance.</p>
-  </section>
-
-  <section>
-    <h2>Experience</h2>
-    <div class="timeline">
-      <div class="tl-row">
-        <p class="tl-role">Sr. Technical Product Manager, Platform Enablement</p>
-        <p class="tl-meta">Avalara &nbsp;·&nbsp; 2024 – present</p>
-      </div>
-      <div class="tl-row">
-        <p class="tl-role">Product &amp; Platform Consultant</p>
-        <p class="tl-meta">Independent &nbsp;·&nbsp; 2023 – 2024</p>
-      </div>
-      <div class="tl-row">
-        <p class="tl-role">Head of Product Management &amp; Engineering</p>
-        <p class="tl-meta">Superbid Exchange &nbsp;·&nbsp; 2021 – 2023</p>
-      </div>
-      <div class="tl-row">
-        <p class="tl-role">Product Manager, then Senior Technology Product Manager</p>
-        <p class="tl-meta">Round Pegs &nbsp;·&nbsp; 2019 – 2021</p>
-      </div>
-      <div class="tl-row">
-        <p class="tl-role">Software engineering &amp; technical consulting</p>
-        <p class="tl-meta">Multiple companies &nbsp;·&nbsp; 1996 – 2019</p>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Selected work</h2>
-
-    <div class="case">
-      <h3>Rebuilding a legacy internal tool company-wide</h3>
-      <p class="when">Avalara &nbsp;·&nbsp; 2024 – 2026</p>
-      <p>At Avalara, an internal platform tool that 80+ people rely on daily was still running on an aging, tightly-coupled interface. Over about two years, with the full React rebuild starting in early 2026, I directed the redesign from end to end. I owned product direction, cross-team coordination, and hands-on input into the solution design, while engineering migrated the tool onto a GraphQL abstraction layer and rebuilt the interface in React.</p>
-      <p class="result">It rolled out to the entire user base by mid-2026, with a clean cutover.</p>
-    </div>
-
-    <div class="case">
-      <h3>Standardizing customer support tooling across LatAm</h3>
-      <p class="when">Superbid &nbsp;·&nbsp; Sep 2021 – Aug 2023</p>
-      <p>Support overflow across Superbid's LatAm markets kept landing on first-line teams that had no structured workflow to absorb it. Around 60 tickets a month were spilling over. I coordinated a cross-functional customer-found-defects tracking initiative that connected Legal, Sales, Operations, Engineering, and Product across Brazil and the wider LatAm region onto a single system, and I drove standardized help-desk tooling and processes across the countries we operated in.</p>
-      <p class="result">Overflow dropped by roughly 54%, a figure that held consistent across three separate points in my own records.</p>
-    </div>
-
-    <div class="case">
-      <h3>Removing manual data-onboarding drag</h3>
-      <p class="when">Round Pegs / Superbid &nbsp;·&nbsp; Jul 2020 – Aug 2021</p>
-      <p>Every time a large client onboarded, Superbid's digitization function hit a wall. Heterogeneous file formats had to be processed by hand, in bursts, and that slowed everything down. I led a small multifunctional squad that replaced the manual step with standardized file-input formats and scripts that fed client source files straight into the system, moving us off legacy tooling and onto distributed microservices.</p>
-      <p class="result">Cycle time in the digitization function improved by roughly 21%. It's the most consistently corroborated metric in my records from that period, and the work led directly to a move into a Head of Product role.</p>
-    </div>
-  </section>
-
-  <section>
-    <h2>What I work with</h2>
-    <div class="skillgroup">
-      <p class="label">Product &amp; leadership</p>
-      <div class="tags">
-        <span class="tag">Platform product strategy</span>
-        <span class="tag">Cross-functional &amp; stakeholder alignment</span>
-        <span class="tag">People &amp; team leadership</span>
-        <span class="tag">0-to-1 product &amp; GTM</span>
-        <span class="tag">Agile / Scrum</span>
-        <span class="tag">M&amp;A technical due diligence</span>
-        <span class="tag">Regional expansion</span>
-      </div>
-    </div>
-    <div class="skillgroup">
-      <p class="label">Engineering &amp; platform</p>
-      <div class="tags">
-        <span class="tag">REST &amp; GraphQL API design</span>
-        <span class="tag">Data ingestion, ETL &amp; pipelines</span>
-        <span class="tag">Software engineering (PHP/Laravel, Java, JavaScript)</span>
-        <span class="tag">Linux systems &amp; networks</span>
-        <span class="tag">Tax &amp; compliance platforms</span>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Languages</h2>
-    <p class="langs">Portuguese <span class="lvl">(native)</span> &nbsp;·&nbsp; English <span class="lvl">(professional)</span> &nbsp;·&nbsp; Spanish <span class="lvl">(basic)</span></p>
-  </section>
-
-  <section class="contact">
-    <h2>Get in touch</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/fbarrocal">LinkedIn</a>
-      <span class="sep">·</span>
+  <aside class="side">
+    <img class="photo" src="photo.jpg" alt="Fernando Barrocal" width="256" height="256">
+    <h1>Fernando Barrocal</h1>
+    <p class="role">Technical Product Manager</p>
+    <p class="contact">
+      <a href="https://www.linkedin.com/in/fbarrocal">LinkedIn</a> &nbsp;·&nbsp;
       <a href="mailto:fernando.barrocal@gmail.com">fernando.barrocal@gmail.com</a>
     </p>
-  </section>
 
-  <footer>
-    © <span id="y"></span> Fernando Barrocal
-  </footer>
+    <div class="railbox">
+      <p class="rlabel">Experience</p>
+      <div class="tl">
+        <div class="tl-row"><p class="tl-role">Sr. Technical Product Manager</p><p class="tl-meta">Avalara · 2024 – now</p></div>
+        <div class="tl-row"><p class="tl-role">Product &amp; Platform Consultant</p><p class="tl-meta">Independent · 2023 – 2024</p></div>
+        <div class="tl-row"><p class="tl-role">Head of Product Mgmt &amp; Engineering</p><p class="tl-meta">Superbid Exchange · 2021 – 2023</p></div>
+        <div class="tl-row"><p class="tl-role">Product Manager → Sr. Technology PM</p><p class="tl-meta">Round Pegs · 2019 – 2021</p></div>
+        <div class="tl-row"><p class="tl-role">Software engineering &amp; consulting</p><p class="tl-meta">Multiple companies · 1996 – 2019</p></div>
+      </div>
+    </div>
 
+    <div class="railbox">
+      <p class="rlabel">What I work with</p>
+      <div class="chips">
+        <span class="chip">Platform product strategy</span>
+        <span class="chip">Stakeholder alignment</span>
+        <span class="chip">Team leadership</span>
+        <span class="chip">0-to-1 &amp; GTM</span>
+        <span class="chip">REST &amp; GraphQL APIs</span>
+        <span class="chip">Data ingestion &amp; ETL</span>
+        <span class="chip">PHP · Java · JavaScript</span>
+        <span class="chip">Tax &amp; compliance</span>
+      </div>
+    </div>
+
+    <p class="langs">Portuguese (native) · English (professional) · Spanish (basic)</p>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <p class="big serif">Structure the ambiguity, <em>then build through it.</em></p>
+      <p class="standfirst">I've spent more than twenty years writing software and more than ten years turning that depth into product leadership. <strong>Working both sides is where I'm most useful.</strong> I take ambiguous, cross-team platform problems, work out the engineering constraints and the business stakes together, and build through them. Always looking for the next challenge, ideally a 0-to-1 build or a turnaround with room to grow scope.</p>
+
+      <div class="statband">
+        <a class="stat-tile" href="#s1"><p class="n">80+</p><p>daily users cut over to a rebuilt internal platform tool</p></a>
+        <a class="stat-tile" href="#s2"><p class="n">~54%</p><p>drop in support overflow across LatAm markets</p></a>
+        <a class="stat-tile" href="#s3"><p class="n">~21%</p><p>faster cycle time in a manual digitization function</p></a>
+      </div>
+    </section>
+
+    <section class="lede">
+      <h2>The stories behind the numbers</h2>
+      <p>Three problems that arrived without a shape: an aging tool everyone depended on, support demand nobody owned, a manual bottleneck everyone had learned to live with. The job in each case was the same: find the structure, then build.</p>
+    </section>
+
+    <div class="study" id="s1">
+      <p class="kick"><span class="num">01</span>Avalara · 2024 – 2026</p>
+      <h3 class="serif">Rebuilding a legacy internal tool company-wide</h3>
+      <p>An internal platform tool that 80+ people rely on daily was still running on an aging, tightly-coupled interface. Over about two years, I directed the redesign from end to end, owning product direction, cross-team coordination, and hands-on input into the solution design, while engineering migrated the tool onto a GraphQL abstraction layer and rebuilt the interface in React.</p>
+      <p class="close">Rolled out to the <span class="n">entire 80+ user base</span> by mid-2026, with a clean cutover.</p>
+    </div>
+
+    <div class="study" id="s2">
+      <p class="kick"><span class="num">02</span>Superbid · 2021 – 2023</p>
+      <h3 class="serif">Standardizing customer support tooling across LatAm</h3>
+      <p>Support overflow kept landing on first-line teams with no structured workflow to absorb it. Around 60 tickets a month were spilling over. I coordinated a cross-functional customer-found-defects initiative that connected Legal, Sales, Operations, Engineering, and Product across Brazil and the wider region onto a single system, and drove standardized help-desk tooling across the countries we operated in.</p>
+      <p class="close">Overflow dropped by <span class="n">roughly 54%</span>, consistent across three separate points in my records.</p>
+    </div>
+
+    <div class="study" id="s3">
+      <p class="kick"><span class="num">03</span>Round Pegs / Superbid · 2020 – 2021</p>
+      <h3 class="serif">Removing manual data-onboarding drag</h3>
+      <p>Every large-client onboarding hit the same wall: heterogeneous file formats processed by hand, in bursts. I led a small multifunctional squad that replaced the manual step with standardized file-input formats and scripts feeding client source files straight into the system, moving us off legacy tooling and onto distributed microservices.</p>
+      <p class="close">Cycle time improved by <span class="n">roughly 21%</span>; the work led directly to a Head of Product role.</p>
+    </div>
+
+    <footer>© <span id="y"></span> Fernando Barrocal</footer>
+  </main>
 </div>
 <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
