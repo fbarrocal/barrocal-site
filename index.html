@@ -25,11 +25,12 @@
     padding:52px 40px 44px 0;
   }
   .side::-webkit-scrollbar{display:none}
-  .side .photo{width:96px; height:96px; border-radius:12px; object-fit:cover; margin-bottom:18px;
+  .idrow{display:flex; align-items:center; gap:16px}
+  .idrow .photo{flex:0 0 auto; width:80px; height:80px; border-radius:12px; object-fit:cover;
     border:1px solid var(--line);}
-  .side h1{font-size:30px; line-height:1.1; margin:0 0 6px; letter-spacing:-.02em; font-weight:600}
-  .side .role{font-size:16px; color:var(--ink); margin:0 0 12px; font-weight:500}
-  .side .contact{font-size:13.5px; color:var(--muted); margin:0 0 4px}
+  .idrow h1{font-size:26px; line-height:1.12; margin:0 0 4px; letter-spacing:-.02em; font-weight:600}
+  .idrow .role{font-size:15px; color:var(--ink); margin:0; font-weight:500}
+  .side .contact{font-size:13.5px; color:var(--muted); margin:12px 0 0}
   .side .contact a{color:var(--accent)}
 
   .railbox{background:var(--panel); border:1px solid var(--line); border-radius:12px;
@@ -90,9 +91,13 @@
 <div class="shell">
 
   <aside class="side">
-    <img class="photo" src="photo.jpg" alt="Fernando Barrocal" width="256" height="256">
-    <h1>Fernando Barrocal</h1>
-    <p class="role">Technical Product Manager</p>
+    <div class="idrow">
+      <img class="photo" src="photo.jpg" alt="Fernando Barrocal" width="256" height="256">
+      <div>
+        <h1>Fernando Barrocal</h1>
+        <p class="role">Technical Product Manager</p>
+      </div>
+    </div>
     <p class="contact">
       <a href="https://www.linkedin.com/in/fbarrocal">LinkedIn</a> &nbsp;·&nbsp;
       <a href="mailto:fernando.barrocal@gmail.com">fernando.barrocal@gmail.com</a>
