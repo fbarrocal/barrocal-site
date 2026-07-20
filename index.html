@@ -7,8 +7,10 @@
 <meta name="description" content="Technical Product Manager. More than twenty years in hands-on engineering and more than ten years in product leadership.">
 <style>
   :root{
-    --bg:#0f1b2d; --panel:#12233a; --ink:#e2e8f0; --muted:#8b9bb0; --faint:#5b6b80;
-    --accent:#5eead4; --line:#1e3350;
+    /* palette derived from photo-library.jpg (k-means):
+       #0b0703 #19110b #2c221b #453a32 #6f5340 #d9c1b5 + lamp amber */
+    --bg:#171009; --panel:#221910; --ink:#ede4da; --muted:#b3a291; --faint:#84735f;
+    --accent:#e2a86a; --line:#3a2d20;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -25,13 +27,24 @@
     padding:52px 40px 44px 0;
   }
   .side::-webkit-scrollbar{display:none}
-  .idrow{display:flex; align-items:center; gap:16px}
-  .idrow .photo{flex:0 0 auto; width:80px; height:80px; border-radius:12px; object-fit:cover;
-    border:1px solid var(--line);}
-  .idrow h1{font-size:26px; line-height:1.12; margin:0 0 4px; letter-spacing:-.02em; font-weight:600}
-  .idrow .role{font-size:15px; color:var(--ink); margin:0; font-weight:500}
-  .side .contact{font-size:13.5px; color:var(--muted); margin:12px 0 0}
-  .side .contact a{color:var(--accent)}
+
+  /* --- G5b2: full landscape photo (white sliver cropped), warm scrim overlay --- */
+  .photocard{position:relative; border-radius:14px; overflow:hidden;
+    border:1px solid var(--line); aspect-ratio:445/332;}
+  .photocard img{position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; display:block}
+  .photocard .scrim{position:absolute; inset:0;
+    background:linear-gradient(to top,
+      rgba(23,16,9,.96) 0%, rgba(23,16,9,.78) 22%,
+      rgba(23,16,9,.32) 46%, rgba(23,16,9,0) 66%);}
+  .photocard .id{position:absolute; left:0; right:0; bottom:0; padding:14px 18px 13px}
+  .photocard h1{font-size:23px; line-height:1.12; margin:0 0 2px;
+    letter-spacing:-.02em; font-weight:600; color:#f7f0e8;
+    text-shadow:0 1px 8px rgba(12,8,4,.6)}
+  .photocard .role{font-size:14px; color:var(--ink); margin:0; font-weight:500;
+    text-shadow:0 1px 6px rgba(12,8,4,.6)}
+  .photocard .contact{font-size:12.5px; color:var(--muted); margin:7px 0 0; line-height:1.5}
+  .photocard .contact a{color:var(--accent)}
 
   .railbox{background:var(--panel); border:1px solid var(--line); border-radius:12px;
     padding:18px 20px; margin-top:18px}
@@ -83,6 +96,7 @@
   @media (max-width:920px){
     .shell{flex-direction:column; padding:0 24px}
     .side{position:static; height:auto; flex:none; overflow:visible; padding:52px 0 0}
+    .photocard{max-width:440px}
     main{padding:36px 0 56px}
     .hero .big{font-size:34px}
     .lede .callout{font-size:25px}
@@ -94,17 +108,18 @@
 <div class="shell">
 
   <aside class="side">
-    <div class="idrow">
-      <img class="photo" src="photo.jpg" alt="Fernando Barrocal" width="256" height="256">
-      <div>
+    <div class="photocard">
+      <img src="photo-library.jpg" alt="Fernando Barrocal">
+      <div class="scrim"></div>
+      <div class="id">
         <h1>Fernando Barrocal</h1>
         <p class="role">Technical Product Manager</p>
+        <p class="contact">
+          <a href="https://www.linkedin.com/in/fbarrocal">LinkedIn</a> &nbsp;·&nbsp;
+          <a href="mailto:fernando.barrocal@gmail.com">fernando.barrocal@gmail.com</a>
+        </p>
       </div>
     </div>
-    <p class="contact">
-      <a href="https://www.linkedin.com/in/fbarrocal">LinkedIn</a> &nbsp;·&nbsp;
-      <a href="mailto:fernando.barrocal@gmail.com">fernando.barrocal@gmail.com</a>
-    </p>
 
     <div class="railbox">
       <p class="rlabel">Experience</p>
