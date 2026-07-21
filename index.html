@@ -155,7 +155,7 @@
       <p class="standfirst">I've spent more than twenty years writing software and more than ten turning that depth into product leadership. I take ambiguous, cross-team platform problems, <strong>work out the engineering constraints and the business stakes together</strong>, and build through them. Always looking for the next challenge, ideally a 0-to-1 build or a turnaround with room to grow scope.</p>
 
       <div class="statband">
-        <a class="stat-tile" href="#s1"><p class="n">80+</p><p>daily users cut over to a rebuilt internal platform tool</p></a>
+        <a class="stat-tile" href="#s1"><p class="n">18,000+</p><p>tax forms across 17 domains on the platform that replaced a legacy monolith</p></a>
         <a class="stat-tile" href="#s2"><p class="n">~54%</p><p>drop in support overflow across LatAm markets</p></a>
         <a class="stat-tile" href="#s3"><p class="n">~21%</p><p>faster cycle time in a manual digitization function</p></a>
       </div>
@@ -168,11 +168,11 @@
     </section>
 
     <div class="study" id="s1">
-      <p class="kick"><span class="num">01</span>Avalara · 2024 – 2026</p>
-      <h3 class="serif">Rebuilding a legacy internal tool company-wide</h3>
-      <p>More than 80 people open the same internal tool every day to turn jurisdiction tax forms into forms the platform can fill and file correctly. It was still running on an aging, tightly coupled interface, and it could not simply stop while we replaced it.</p>
-      <p>Over about two years I directed the rebuild end to end, owning product direction, cross-team coordination, and hands-on input into the solution design, while engineering moved the tool onto a GraphQL abstraction layer and rebuilt the interface in React.</p>
-      <p class="close">Rolled out to the <span class="n">entire 80+ user base</span> by mid-2026, with a clean cutover.</p>
+      <p class="kick"><span class="num">01</span>Avalara · 2024 – now</p>
+      <h3 class="serif">Retiring the legacy catalog behind every Returns product</h3>
+      <p>Every Avalara Returns product runs on the same execution layer: the tax forms the platform fills and files. That layer lived in an aging monolith, the Tax Form Catalog, that spread form management across 15+ separate products, exposed no shared API, and blocked anything modern from being built on top of it. It could not be switched off, because every product depended on it.</p>
+      <p>I directed the program that replaced it, driving the spec and the gap analysis against the old system, sequencing a quarter-by-quarter parity roadmap, and moving each vertical across persona by persona rather than in one risky cutover. Engineering re-platformed the monolith onto microservices, a REST form-definition service behind a GraphQL layer, while the authoring interface was rebuilt in React on the new abstraction.</p>
+      <p class="close">A single production cutover in June 2025 moved <span class="n">15+ dependent systems</span> onto the new services with no downstream disruption. The platform now authors 18,000+ forms across 17 tax domains, and the legacy catalog is on track to retire by the end of 2026.</p>
     </div>
 
     <div class="study" id="s2">
