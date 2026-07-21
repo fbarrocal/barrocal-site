@@ -102,6 +102,20 @@
     .lede .callout{font-size:25px}
     .statband{grid-template-columns:1fr}
   }
+
+  /* ---- testimonials (painting) + sculpting spacing ---- */
+  .tband{border-top:1px solid var(--line); padding:50px 0 4px; margin-top:44px}
+  .leadquote{margin:2px 0 34px}
+  .leadquote .q{font-size:29px; line-height:1.3; font-style:italic; color:var(--ink); margin:0 0 16px; letter-spacing:-.012em}
+  .leadquote .q .mk{color:var(--accent); font-style:normal}
+  .leadquote .attr{font-size:12.5px; color:var(--faint); margin:0}
+  .leadquote .attr .who{color:var(--accent); font-weight:500}
+  .qgrid{display:grid; gap:14px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .qcard{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:20px 22px; transition:border-color .2s}
+  .qcard:hover{border-color:var(--accent)}
+  .qcard .qt{font-size:15px; line-height:1.56; color:var(--ink); margin:0 0 14px}
+  .qcard .qt .mk{color:var(--accent)}
+  .qcard .qa{font-size:11.5px; text-transform:uppercase; letter-spacing:.13em; color:var(--faint); margin:0}
 </style>
 </head>
 <body>
@@ -163,7 +177,7 @@
 
     <section class="lede">
       <h2>The stories behind the numbers</h2>
-      <p class="callout serif">Call centers, auctions, tax forms. <em>I fall for the problems nobody writes love songs about.</em></p>
+      <p class="callout serif">Call centers, auctions, tax forms. <em>I fall for the problems nobody writes songs about.</em></p>
       <p>None of these started as a defined project. Each one was friction the business had learned to live with. Turning that kind of problem into something a team can ship is the job. These three show what it looks like.</p>
     </section>
 
@@ -189,6 +203,40 @@
       <p>The biggest clients created the worst spikes: every large onboarding arrived as heterogeneous files someone processed by hand, in bursts. The team had learned to live with it.</p>
       <p>I led a small multifunctional squad that replaced the manual step with standardized file-input formats and scripts feeding client source files straight into the system, moving us off legacy tooling and onto distributed microservices.</p>
       <p class="close">Cycle time improved by <span class="n">roughly 21%</span>; the work led directly to a Head of Product role.</p>
+    </div>
+
+
+    <div class="study">
+      <h2>Sculpting the path</h2>
+      <h3 class="serif">45 projects, 100% client success</h3>
+      <p>The strategy gets written, and the hard problems get their song. Some things you just shape by hand. Alongside every product role, I kept a practice running: real software, shipped for real clients across many industries and countries.</p>
+      <p class="close">Every engagement independently tracked and scored by the platform, not self-reported.</p>
+    </div>
+
+    <div class="tband">
+      <h2>Every client, a brushstroke</h2>
+      <div class="leadquote">
+        <p class="q serif"><span class="mk">&ldquo;</span>He&rsquo;s the best Product Manager I&rsquo;ve worked with so far. Fernando brings a huge amount of experience, is kind, responsive, and consistently professional. I can&rsquo;t recommend him enough.<span class="mk">&rdquo;</span></p>
+        <p class="attr"><span class="who">Mykhail Heraskin</span>, AmberEnhance</p>
+      </div>
+      <div class="qgrid">
+        <div class="qcard">
+          <p class="qt"><span class="mk">&ldquo;</span>A gifted developer, knowledgeable about so many aspects of development, from code quality through dev-ops, deployment, git hygiene, project management, and much more.<span class="mk">&rdquo;</span></p>
+          <p class="qa">OctoberCMS platform &middot; 2,100+ hrs</p>
+        </div>
+        <div class="qcard">
+          <p class="qt"><span class="mk">&ldquo;</span>He takes the time to document, research, back up, explain, and implement. We understand the fix, and the codebase is stable and reliable.<span class="mk">&rdquo;</span></p>
+          <p class="qa">WordPress platform &middot; multi-year</p>
+        </div>
+        <div class="qcard">
+          <p class="qt"><span class="mk">&ldquo;</span>Amazing organization managing the projects. His communication was top-notch, and he met all deadlines.<span class="mk">&rdquo;</span></p>
+          <p class="qa">Project &amp; lead developer &middot; 2019</p>
+        </div>
+        <div class="qcard">
+          <p class="qt"><span class="mk">&ldquo;</span>Probably the best developer we have found so far. Very professional, and takes great care communicating, providing reports, and suggesting solutions and improvements.<span class="mk">&rdquo;</span></p>
+          <p class="qa">Linux infrastructure &middot; 2008</p>
+        </div>
+      </div>
     </div>
 
     <footer>© <span id="y"></span> Fernando Barrocal</footer>
