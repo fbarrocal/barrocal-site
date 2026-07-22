@@ -7,10 +7,10 @@
 <meta name="description" content="Technical Product Manager. More than twenty years in hands-on engineering and more than ten years in product leadership.">
 <style>
   :root{
-    /* palette derived from photo-library.jpg (k-means):
-       #0b0703 #19110b #2c221b #453a32 #6f5340 #d9c1b5 + lamp amber */
-    --bg:#171009; --panel:#221910; --ink:#ede4da; --muted:#b3a291; --faint:#84735f;
-    --accent:#e2a86a; --line:#3a2d20;
+    /* deep-teal palette (2026-07-22): cool neutral-dark base, teal accent,
+       chosen as complement to the warm photo instead of echoing its browns */
+    --bg:#0f1413; --panel:#17201e; --ink:#e6ece9; --muted:#8fa39d; --faint:#5c6c67;
+    --accent:#3fc0a3; --line:#223029; --scrim:15,20,19;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
@@ -35,8 +35,8 @@
     object-fit:cover; display:block}
   .photocard .scrim{position:absolute; inset:0;
     background:linear-gradient(to top,
-      rgba(23,16,9,.96) 0%, rgba(23,16,9,.78) 22%,
-      rgba(23,16,9,.32) 46%, rgba(23,16,9,0) 66%);}
+      rgba(var(--scrim),.96) 0%, rgba(var(--scrim),.78) 22%,
+      rgba(var(--scrim),.32) 46%, rgba(var(--scrim),0) 66%);}
   .photocard .id{position:absolute; left:0; right:0; bottom:0; padding:14px 18px 13px}
   .photocard h1{font-size:23px; line-height:1.12; margin:0 0 2px;
     letter-spacing:-.02em; font-weight:600; color:#f7f0e8;
