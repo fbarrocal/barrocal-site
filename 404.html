@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Page not found · Fernando Barrocal</title>
+<script>
+  // Legacy CV filenames (removed 2026-11-02) forward to the current ones.
+  (function(){
+    var map = {
+      "/fernando-barrocal-cv.pdf": "/Fernando-Barrocal-Senior-Technical-Product-Manager-CV.pdf",
+      "/fernando-barrocal-curriculo.pdf": "/Fernando-Barrocal-Senior-Technical-Product-Manager-Curriculo.pdf"
+    };
+    var to = map[location.pathname.toLowerCase()];
+    if (to) location.replace(to);
+  })();
+</script>
+<style>
+  :root{
+    --bg:#0f1413; --panel:#17201e; --ink:#e6ece9; --muted:#8fa39d; --faint:#5c6c67;
+    --accent:#3fc0a3; --line:#223029;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    background:var(--bg); color:var(--ink); padding:40px 16px;
+    font:400 16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none}
+  main{max-width:560px; width:100%; background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:36px 32px}
+  .code{color:var(--faint); font-size:13px; letter-spacing:.12em; text-transform:uppercase; margin:0 0 10px}
+  h1{font-family:Georgia,"Times New Roman",serif; font-weight:400; font-size:28px; line-height:1.25; margin:0 0 10px}
+  p{color:var(--muted); margin:0 0 22px}
+  .cta{display:flex; flex-wrap:wrap; gap:12px}
+  .btn{display:inline-block; padding:12px 20px; border-radius:10px; font-size:14px; font-weight:600; background:var(--accent); color:var(--bg); border:1px solid var(--accent)}
+  .btn.ghost{background:transparent; color:var(--accent)}
+  .btn:hover{opacity:.88}
+  hr{border:0; border-top:1px solid var(--line); margin:28px 0}
+</style>
+</head>
+<body>
+<main>
+  <p class="code">404</p>
+  <h1>This page doesn't exist.</h1>
+  <p>The link may be old. The site and my CV are here:</p>
+  <div class="cta">
+    <a class="btn" href="/">barrocal.com</a>
+    <a class="btn ghost" href="/Fernando-Barrocal-Senior-Technical-Product-Manager-CV.pdf">CV (PDF)</a>
+  </div>
+  <hr>
+  <div lang="pt-BR">
+    <h1>Esta página não existe.</h1>
+    <p>O link pode estar desatualizado. O site e o meu currículo estão aqui:</p>
+    <div class="cta">
+      <a class="btn" href="/pt/">barrocal.com/pt</a>
+      <a class="btn ghost" href="/Fernando-Barrocal-Senior-Technical-Product-Manager-Curriculo.pdf">Currículo (PDF)</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
